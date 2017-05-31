@@ -1,5 +1,353 @@
-<ul>
-  <% @calendar_list.items.each do |calendar| %>
-  <li><%= calendar.summary %> (<%= calendar.id %>)</li>
-  <% end %>
-</ul>
+<!doctype html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hub - EPITECH</title>
+
+  <!-- Import CSS-->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Import JS-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.js"></script>
+</head>
+
+<body>
+
+  <div id ="perso-screen" class="col-md-4">
+    <div class="col-md-12">
+      <div class="box jumbotron" id="who">
+        <div class="photo">
+          <img src="htstp://placehold.it/100x100">
+        </div>
+        <div class="info">
+          <h3><b>John Doe</b></h3>
+          <h4>Astek - 3ème année</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="box jumbotron first text-center" id="today">
+        <h3><b>AUJOURD'HUI</b></h3>
+        <table style="width:100%; text-align:left; margin:20px;">
+          <tr>
+            <td><h4>Faire l'inventaire du matos</h4></td>
+            <td><h4 class="text-center table-transp" ><b>9h-10h</b></h4></td>
+          </tr>
+
+          <tr>
+            <td><h4>Séminaire Android</h4></td>
+            <td><h4 class="text-center table-transp"><b>11h-15h<b></h4></td>
+            </tr>
+
+            <tr>
+              <td><h4>Sprint All Teams</h4></td>
+              <td><h4 class="text-center table-transp"><b>16h<b></h4></td>
+              </tr>
+
+              <tr>
+                <td><h4>Brainstorming Résidents</h4></td>
+                <td><h4 class="text-center table-transp"><b>18h</b></h4></td>
+              </tr>
+
+              <tr>
+                <td><h4>Réunion</h4></td>
+                <td><h4 class="text-center table-transp"><b>20h</b></h4></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="box jumbotron text-center" id="message">
+            <h3><b>MES MESSAGES</b></h3>
+            <table style="width:100%; text-align:left; margin:20px;">
+              <tr>
+                <td><h4>from <b>@nelly</b></h4><h5>Hello ! Est-ce que t'aurais une Rasperry PI à me dépanner stp ?</h5></td>
+                <td><h4 class="text-center">5min</h4></td>
+              </tr>
+
+              <tr>
+                <td><h4>from <b>@nelly</b></h4><h5>Hello ! Est-ce que t'aurais une Rasperry PI à me dépanner stp ?</h5></td>
+                <td><h4 class="text-center">10h</h4></td>
+              </tr>
+
+              <tr>
+                <td><h4>from <b>@nelly</b></h4><h5>Hello ! Est-ce que t'aurais une Rasperry PI à me dépanner stp ?</h5></td>
+                <td><h4 class="text-center">Hier</h4></td>
+              </tr>
+
+              <tr>
+                <td><h4>from <b>@nelly</b></h4><h5>Hello ! Est-ce que t'aurais une Rasperry PI à me dépanner stp ?</h5></td>
+                <td><h4 class="text-center">Hier</h4></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="box jumbotron text-center" id="inventaire">
+            <h3><b>OBJETS EN MA POSSESSION</b></h3>
+            <table style="width:100%; text-align:left; margin:20px;">
+              <tr>
+                <td><h4>Objet 1</h4></td>
+                <td><h4>Casier 15</h4></td>
+                <td><h4>15h</h4></td>
+
+              </tr>
+              <tr>
+                <td><h4>Objet 1</h4></td>
+                <td><h4>Casier 15</h4></td>
+                <td><h4>15h</h4></td>
+              </tr>
+              <tr>
+                <td><h4>Objet 1</h4></td>
+                <td><h4>Casier 15</h4></td>
+                <td><h4>15h</h4></td>          </tr>
+                <tr>
+                  <td><h4>Objet 1</h4></td>
+                  <td><h4>Casier 15</h4></td>
+                  <td><h4>15h</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Objet 1</h4></td>
+                  <td><h4>Casier 15</h4></td>
+                  <td><h4>15h</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Objet 1</h4></td>
+                  <td><h4>Casier 15</h4></td>
+                  <td><h4>15h</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Objet 1</h4></td>
+                  <td><h4>Casier 15</h4></td>
+                  <td><h4>15h</h4></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <div id ="global-screen" class="col-md-4">
+
+          <div class="col-md-12">
+            <div class="box-without jumbotron text-center block-center" id="idle">
+              <%= image_tag "idle.png", class: "idle"%>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-5">
+
+          <div class="box jumbotron text-center" id="map">
+            <canvas id="canvas" width="500" height="1000">
+              Sorry, your browser doesn't support the &lt;canvas&gt; element.
+
+            </canvas>
+
+          </div>
+        </div>
+        <div class="col-md-3">
+
+          <div class="col-md-12">
+            <div class="col-md-6" style="padding-left:0px;">
+              <div class="box jumbotron text-center" id="time">
+                <%= image_tag "weather-sun.png" %>
+                <h3><b>18°, ensoleillé</b></h3>
+                <h4>Kremlin-Bicêtre</h4>
+              </div>
+            </div>
+
+            <div class="col-md-6" style="padding-right:0px;">
+              <div class="box jumbotron text-center" id="time">
+                <h2 class="time"><b>15:00</b></h2>
+                <h3>Jeudi 12 Mai</h3>
+                <h4>2017</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="box jumbotron text-center" id="whoishere">
+              <h3><b>QUI EST DANS LE HUB</b></h3>
+              <hr>
+              <div class="col-md-3 text-center">
+                <img src="http://placehold.it/75x75">
+                <h4>Quentin</h4>
+              </div>
+              <div class="col-md-3 text-center" style="margin-bottom:20px;">
+                <img src="http://placehold.it/75x75">
+                <h4>Flavian</h4>
+              </div>
+              <div class="col-md-3 text-center" style="margin-bottom:20px;">
+                <img src="http://placehold.it/75x75">
+                <h4>Raphael</h4>
+              </div>
+              <div class="col-md-3 text-center" style="margin-bottom:25px;">
+                <img src="http://placehold.it/75x75">
+                <h4>Quentin</h4>
+              </div>
+              <div class="col-md-3 text-center" style="margin-bottom:25px;">
+                <img src="http://placehold.it/75x75">
+                <h4>Flavian</h4>
+              </div>
+              <div class="col-md-3 text-center" style="margin-bottom:25px;">
+                <img src="http://placehold.it/75x75">
+                <h4>Raphael</h4>
+              </div>
+              <div class="col-md-3 text-center" style="margin-bottom:25px;">
+                <img src="http://placehold.it/75x75">
+                <h4>Quentin</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="box jumbotron text-center" id="news">
+              <h3><b>News du Hub</b></h3>
+              <table style="  width:100%; text-align:left; margin:20px;">
+                <tr>
+                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </body>
+
+      <script>      //SCRIPT HEURES RESERVATION
+      var c=document.getElementById("canvas");
+      var ctx=c.getContext("2d");
+      var midX = (canvas.width)/2;
+      var midY = (canvas.height)/2;
+      ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+      ctx.font="25px Calibri";
+      ctx.fillText("16H10",125,185);
+      ctx.fillText("16H20",170,330);
+      ctx.fillText("16H30",140,660);
+      ctx.fillText("16H40",150,760);
+      ctx.fillText("16H50",300,850);
+      ctx.fillText("17H00",410,680);
+      ctx.fillText("17H10",410,425);
+      </script>
+
+      <script>      //SCRIPT SALLES
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.beginPath();
+
+
+      ctx.moveTo(0, 205);
+      ctx.lineTo(50, 250);
+      ctx.lineTo(275, 250);
+      ctx.lineTo(275, 160);
+      ctx.lineTo(165, 50);
+      ctx.fill();
+
+      //Salle Combiner
+      ctx.beginPath();
+      ctx.moveTo(130, 250);
+      ctx.lineTo(280, 250);
+      ctx.lineTo(280, 380);
+      ctx.lineTo(130, 380);
+      ctx.fill();
+
+      //Salle Converger
+      ctx.beginPath();
+      ctx.moveTo(500, 350);
+      ctx.lineTo(410, 350);
+      ctx.lineTo(385, 380);
+      ctx.lineTo(385, 460);
+      ctx.lineTo(420, 490);
+      ctx.lineTo(500, 490);
+      ctx.fill();
+
+      //Salle Planifier
+      ctx.beginPath();
+      ctx.moveTo(500, 610);
+      ctx.lineTo(410, 610);
+      ctx.lineTo(385, 650);
+      ctx.lineTo(385, 710);
+      ctx.lineTo(420, 740);
+      ctx.lineTo(500, 740);
+      ctx.fill();
+
+      //Salle Échanger
+      ctx.beginPath();
+      ctx.moveTo(125, 610);
+      ctx.lineTo(125, 705);
+      ctx.lineTo(200, 705);
+      ctx.lineTo(225, 670);
+      ctx.lineTo(225, 610);
+      ctx.fill();
+
+      //Salle
+      ctx.beginPath();
+      ctx.moveTo(125, 705);
+      ctx.lineTo(125, 810);
+      ctx.lineTo(140, 830);
+      ctx.lineTo(190, 830);
+      ctx.lineTo(270, 760);
+      ctx.lineTo(270, 710);
+      ctx.lineTo(220, 670);
+      ctx.lineTo(200, 710);
+      ctx.fill();
+
+      //Salle Cocréer
+      ctx.beginPath();
+      ctx.moveTo(140, 830);
+      ctx.lineTo(190, 830);
+      ctx.lineTo(270, 760);
+      ctx.lineTo(270, 705);
+      ctx.lineTo(380, 705);
+      ctx.lineTo(420, 740);
+      ctx.lineTo(500, 740);
+      ctx.lineTo(500, 740);
+      ctx.lineTo(500, 810);
+      ctx.lineTo(350, 960);
+      ctx.lineTo(260, 960);
+      ctx.lineTo(170, 870);
+      ctx.fill();
+
+      </script>
+
+      <script>
+      var duration = 2000;
+      $( ".idle" ).css("animation", "foo " + duration + "ms ease infinite alternate");
+
+      $( "#global-screen" ).on( "click", function() {
+        $("#perso-screen").fadeToggle();
+        $("#global-screen").css( "display", "none");
+      });
+
+      $( "#perso-screen" ).on( "click", function() {
+        $("#global-screen").fadeToggle();
+        $("#perso-screen").css( "display", "none");
+      });
+      </script>
+
+      </html>
