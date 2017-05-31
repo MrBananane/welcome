@@ -23,4 +23,4 @@
 .byebug_history
 
 client_secret.json
-config/secret.yml
+config/secrets.yml
