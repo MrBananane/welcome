@@ -1,15 +1,15 @@
 @font-face {
     font-family: gothamRoundedLight;
-    src: url(../fonts/GothamRnd-Light.otf);
+    src: url(<%= font_path 'GothamRnd-Light.otf' %>);
 }
 
 @font-face {
     font-family: gothamRoundedMedium;
-    src: url(../fonts/GothamRnd-Medium);
+    src: url(<%= font_path 'GothamRnd-Medium.otf' %>);
 }
 
 html {
-background: url(../img/bg.jpg) no-repeat center center fixed;
+background: url(<%= asset_path 'bg.jpg' %>) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -114,7 +114,7 @@ canvas {
 
 
 #map{
-  background: url('../img/map.png');
+  background: url(<%= asset_path 'map.png' %>);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;

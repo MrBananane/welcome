@@ -30,7 +30,21 @@ class HubBookingController < ApplicationController
   end
 
   def calendars
+    days = {"Monday" => "Lundi", "Tuesday" => "Mardi", "Wednesday" => "Mercredi", "Thursday" => "Jeudi", "Friday" => "Vendredi", "Saturday" => "Samedi", "Sunday" => "Dimanche"}
     @calendar_list = @service.list_calendar_lists
+    event_list = @service.list_events(@calendar_list.items.detect{|x| x.summary == "Direction HUB"}.id,
+                                       max_results: 20,
+                                       single_events: true,
+                                       order_by: "startTime",
+                                       time_min: (Time.now - 0.days).at_beginning_of_day.iso8601
+                                     ).items
+    @events = event_list.select{|item| item.color_id != '9'}
+    @bookings = event_list.select{|event| event.color_id == '9' and event.start.date_time.beginning_of_day == (DateTime.now + 3.days).beginning_of_day}
+    byebug
+    I18n.default_locale = :fr
+    ajd = I18n.l Time.now
+    ajd = ajd.split
+    @date_str = days[Time.now.strftime('%A')] + " " + ajd.first.remove('0') + " " + ajd.second.titleize
   end
 
   def events

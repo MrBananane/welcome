@@ -20,7 +20,7 @@
     <div class="col-md-12">
       <div class="box jumbotron" id="who">
         <div class="photo">
-          <img src="htstp://placehold.it/100x100">
+          <img src="https://placehold.it/100x100">
         </div>
         <div class="info">
           <h3><b>John Doe</b></h3>
@@ -33,6 +33,7 @@
       <div class="box jumbotron first text-center" id="today">
         <h3><b>AUJOURD'HUI</b></h3>
         <table style="width:100%; text-align:left; margin:20px;">
+	  <% if false %>
           <tr>
             <td><h4>Faire l'inventaire du matos</h4></td>
             <td><h4 class="text-center table-transp" ><b>9h-10h</b></h4></td>
@@ -57,6 +58,14 @@
                 <td><h4>Réunion</h4></td>
                 <td><h4 class="text-center table-transp"><b>20h</b></h4></td>
               </tr>
+	      <% else %>
+	      <% for i in 0..5 %>
+          <tr>
+            <td><h4><%= @events[i] ? @events[i].summary : "Jam Session" %></h4></td>
+            <td><h4 class="text-center table-transp" ><b><%= @events[i] ? "#{@events[i].start.date_time.hour}h-#{@events[i].end.date_time.hour}h" : "21h-2h" %></b></h4></td>
+          </tr>
+	  <% end %>
+	  <% end %>
             </table>
           </div>
         </div>
@@ -168,7 +177,7 @@
             <div class="col-md-6" style="padding-right:0px;">
               <div class="box jumbotron text-center" id="time">
                 <h2 class="time"><b>15:00</b></h2>
-                <h3>Jeudi 12 Mai</h3>
+                <h3><%= @date_str %></h3>
                 <h4>2017</h4>
               </div>
             </div>

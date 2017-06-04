@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Google Client Librayrgoog
 gem 'google-api-client', require: 'google/apis/calendar_v3'
+# I18n
+gem 'rails-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

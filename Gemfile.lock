@@ -91,7 +91,7 @@ GEM
       activesupport (>= 3.0.0)
       multi_json (>= 1.2)
     jwt (1.5.6)
-    libv8 (5.3.332.38.5-x86_64-linux)
+    libv8 (5.3.332.38.5)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -141,6 +141,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.4)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     railties (5.1.1)
       actionpack (= 5.1.1)
       activesupport (= 5.1.1)
@@ -223,6 +226,7 @@ DEPENDENCIES
   mini_racer
   puma (~> 3.7)
   rails (~> 5.1.1)
+  rails-i18n
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
@@ -234,4 +238,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.0
+   1.15.1
