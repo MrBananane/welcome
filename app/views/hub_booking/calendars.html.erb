@@ -253,18 +253,23 @@ L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et 
 
       <script>      //SCRIPT HEURES RESERVATION
       var c=document.getElementById("canvas");
+      var txt=c.getContext("2d");
       var ctx=c.getContext("2d");
       var midX = (canvas.width)/2;
       var midY = (canvas.height)/2;
-      ctx.fillStyle = 'rgba(255, 255, 255, 1)';
-      ctx.font="25px Calibri";
-      ctx.fillText("16H10",125,185);
-      ctx.fillText("16H20",170,330);
-      ctx.fillText("16H30",140,660);
-      ctx.fillText("16H40",150,760);
-      ctx.fillText("16H50",300,850);
-      ctx.fillText("17H00",410,680);
-      ctx.fillText("17H10",410,425);
+	txt.fillStyle = 'rgba(255, 255, 255, 1)';
+//	ctx.font="15px Calibri";
+  //      ctx.fillText("Libérée à",416,405);
+    //    ctx.fillText("Réservée à",301,830);
+
+      txt.font="25px Calibri";
+       txt.fillText("16H10",125,185);
+      txt.fillText("16H20",170,330);
+      txt.fillText("16H30",140,660);
+      txt.fillText("16H40",150,760);
+      txt.fillText("16H00",300,850);
+      txt.fillText("17H00",410,680);
+      txt.fillText("17H10",410,425);
       </script>
 
       <script>      //SCRIPT SALLES
@@ -278,6 +283,7 @@ L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et 
       ctx.lineTo(275, 160);
       ctx.lineTo(165, 50);
       ctx.fill();
+//      txt.fillText("17H10",410,425);
 
       //Salle Combiner
       ctx.beginPath();
@@ -286,6 +292,7 @@ L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et 
       ctx.lineTo(280, 380);
       ctx.lineTo(130, 380);
       ctx.fill();
+//      txt.fillText("16H10",125,185);
 
       //Salle Converger
       ctx.beginPath();
@@ -294,8 +301,12 @@ L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et 
       ctx.lineTo(385, 380);
       ctx.lineTo(385, 460);
       ctx.lineTo(420, 490);
-      ctx.lineTo(500, 490);
-      ctx.fill();
+	ctx.lineTo(500, 490);
+	<% @bookings.each do |booking| %>
+	<% if booking.summary.downcase.include?("converger") and (booking.start.date_time.beginning_of_hour == DateTime.now.beginning_of_hour) %>
+	  ctx.fill();
+	<% end %>
+	<% end %>
 
       //Salle Planifier
       ctx.beginPath();
@@ -306,6 +317,7 @@ L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et 
       ctx.lineTo(420, 740);
       ctx.lineTo(500, 740);
       ctx.fill();
+//      txt.fillText("16H50",300,850);
 
       //Salle Échanger
       ctx.beginPath();
@@ -315,6 +327,7 @@ L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et 
       ctx.lineTo(225, 670);
       ctx.lineTo(225, 610);
       ctx.fill();
+//      txt.fillText("16H20",170,330);
 
       //Salle
       ctx.beginPath();
@@ -327,6 +340,7 @@ L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et 
       ctx.lineTo(220, 670);
       ctx.lineTo(200, 710);
       ctx.fill();
+//      txt.fillText("16H30",140,660);
 
       //Salle Cocréer
       ctx.beginPath();
@@ -343,6 +357,7 @@ L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et 
       ctx.lineTo(260, 960);
       ctx.lineTo(170, 870);
       ctx.fill();
+//      txt.fillText("16H40",150,760);
 
       </script>
 
