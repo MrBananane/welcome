@@ -40,7 +40,6 @@ class HubBookingController < ApplicationController
                                      ).items
     @events = event_list.select{|item| item.color_id != '9'}
     @bookings = event_list.select{|event| event.color_id == '9' and event.start.date_time.beginning_of_day == (DateTime.now + 3.days).beginning_of_day}
-    byebug
     I18n.default_locale = :fr
     ajd = I18n.l Time.now
     ajd = ajd.split

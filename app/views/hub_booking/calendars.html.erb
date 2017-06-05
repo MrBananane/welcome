@@ -20,7 +20,7 @@
     <div class="col-md-12">
       <div class="box jumbotron" id="who">
         <div class="photo">
-          <img src="https://placehold.it/100x100">
+          <%= image_tag 'felix.png'%>
         </div>
         <div class="info">
           <h3><b>John Doe</b></h3>
@@ -75,22 +75,22 @@
             <h3><b>MES MESSAGES</b></h3>
             <table style="width:100%; text-align:left; margin:20px;">
               <tr>
-                <td><h4>from <b>@nelly</b></h4><h5>Hello ! Est-ce que t'aurais une Rasperry PI à me dépanner stp ?</h5></td>
+                <td><h4>from <b>@schwarzy</b></h4><h5><b>@everyone</b> qq a t'il pris une rasp qui trainait dans la bibliothèque ?</h5></td>
                 <td><h4 class="text-center">5min</h4></td>
               </tr>
 
               <tr>
-                <td><h4>from <b>@nelly</b></h4><h5>Hello ! Est-ce que t'aurais une Rasperry PI à me dépanner stp ?</h5></td>
-                <td><h4 class="text-center">10h</h4></td>
+                <td><h4>from <b>@pm_blackfoot</b></h4><h5><b>@everyone</b> tournage et itw pour marie claire</h5></td>
+                <td><h4 class="text-center">1h</h4></td>
               </tr>
 
               <tr>
-                <td><h4>from <b>@nelly</b></h4><h5>Hello ! Est-ce que t'aurais une Rasperry PI à me dépanner stp ?</h5></td>
+                <td><h4>from <b>@pm_blackfoot</b></h4><h5><b>@everyone</b> il me faut absolument hexapod et horyus cette aprem</h5></td>
                 <td><h4 class="text-center">Hier</h4></td>
               </tr>
 
               <tr>
-                <td><h4>from <b>@nelly</b></h4><h5>Hello ! Est-ce que t'aurais une Rasperry PI à me dépanner stp ?</h5></td>
+                <td><h4>from <b>@nelly</b></h4><h5>Hello <b>@user!</b> Est-ce que t'aurais une Raspberry à me dépanner stp ?</h5></td>
                 <td><h4 class="text-center">Hier</h4></td>
               </tr>
             </table>
@@ -102,25 +102,20 @@
             <h3><b>OBJETS EN MA POSSESSION</b></h3>
             <table style="width:100%; text-align:left; margin:20px;">
               <tr>
-                <td><h4>Objet 1</h4></td>
+                <td><h4>Raspberry Pi 3</h4></td>
                 <td><h4>Casier 15</h4></td>
                 <td><h4>15h</h4></td>
 
               </tr>
               <tr>
-                <td><h4>Objet 1</h4></td>
-                <td><h4>Casier 15</h4></td>
-                <td><h4>15h</h4></td>
+                <td><h4>Fer à souder</h4></td>
+                <td><h4>Casier 16</h4></td>
+                <td><h4>3h</h4></td>
               </tr>
               <tr>
                 <td><h4>Objet 1</h4></td>
                 <td><h4>Casier 15</h4></td>
                 <td><h4>15h</h4></td>          </tr>
-                <tr>
-                  <td><h4>Objet 1</h4></td>
-                  <td><h4>Casier 15</h4></td>
-                  <td><h4>15h</h4></td>
-                </tr>
                 <tr>
                   <td><h4>Objet 1</h4></td>
                   <td><h4>Casier 15</h4></td>
@@ -188,32 +183,32 @@
               <h3><b>QUI EST DANS LE HUB</b></h3>
               <hr>
               <div class="col-md-3 text-center">
-                <img src="http://placehold.it/75x75">
-                <h4>Quentin</h4>
+                <%= image_tag "thibaut.png", width: "75px" %>
+                <h4>Thibaut</h4>
               </div>
               <div class="col-md-3 text-center" style="margin-bottom:20px;">
-                <img src="http://placehold.it/75x75">
-                <h4>Flavian</h4>
+                <%= image_tag "riadh.png", width: "75px" %>
+                <h4>Riadh</h4>
               </div>
               <div class="col-md-3 text-center" style="margin-bottom:20px;">
-                <img src="http://placehold.it/75x75">
-                <h4>Raphael</h4>
+                <%= image_tag "noam.png", width: "75px" %>
+                <h4>Noam</h4>
               </div>
               <div class="col-md-3 text-center" style="margin-bottom:25px;">
-                <img src="http://placehold.it/75x75">
-                <h4>Quentin</h4>
+                <%= image_tag "lucas.png", width: "75px" %>
+                <h4>lucas</h4>
               </div>
               <div class="col-md-3 text-center" style="margin-bottom:25px;">
-                <img src="http://placehold.it/75x75">
-                <h4>Flavian</h4>
+                <%= image_tag "jeremy.png", width: "75px" %>
+                <h4>Jeremy</h4>
               </div>
               <div class="col-md-3 text-center" style="margin-bottom:25px;">
-                <img src="http://placehold.it/75x75">
-                <h4>Raphael</h4>
+                <%= image_tag "clara.png", width: "75px"%>
+                <h4>Clara</h4>
               </div>
               <div class="col-md-3 text-center" style="margin-bottom:25px;">
-                <img src="http://placehold.it/75x75">
-                <h4>Quentin</h4>
+                <%= image_tag "iuilian.png", width: "75px" %>
+                <h4>Iuilian</h4>
               </div>
             </div>
           </div>
@@ -223,31 +218,38 @@
               <h3><b>News du Hub</b></h3>
               <table style="  width:100%; text-align:left; margin:20px;">
                 <tr>
-                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                  <td><h4>Petit rappel : Le Coding All-Star, sera proposé par la Société Générale le mardi 30 mai au Meltdown.
+L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et JS.</h4></td>
+                </tr>
+
+                <tr>
+                  <td><h4> Il va y avoir un Hackthon lors de la VivaTechnology !!! Qui est chaud !?</h4></td>
                 </tr>
                 <tr>
                   <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
                 </tr>
                 <tr>
-                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                  <td><h4>Intel Buzz Workshop Paris 2017 le 8 Juillet 2017</h4></td>
+                </tr>
+                <tr>
+                  <td><h4>Intel Buzz Workshop Paris 2017 le 8 Juillet 2017</h4></td>
                 </tr>
                 <tr>
                   <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
                 </tr>
                 <tr>
-                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+                  <td><h4>Brainstorming mardi 30/05 à 18h00 dans la salle Cocréer !</h4></td>
                 </tr>
               </table>
             </div>
           </div>
         </div>
-      </body>
+</body>
+
+<% weather_script_path = asset_path 'jquery.simpleWeather.js' %>
+<% script_path = asset_path 'script.js' %>
+      <script type="text/javascript" src=<%= "#{weather_script_path}" %>></script>
+      <script type="text/javascript" src=<%= "#{script_path}" %>></script>
 
       <script>      //SCRIPT HEURES RESERVATION
       var c=document.getElementById("canvas");
