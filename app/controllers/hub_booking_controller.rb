@@ -30,8 +30,6 @@ class HubBookingController < ApplicationController
   end
 
   def calendars
-    days = {"Monday" => "Lundi", "Tuesday" => "Mardi", "Wednesday" => "Mercredi", "Thursday" => "Jeudi", "Friday" => "Vendredi", "Saturday" => "Samedi", "Sunday" => "Dimanche"}
-
     begin
       @calendar_list = @service.list_calendar_lists
       event_list = @service.list_events(@calendar_list.items.detect{|x| x.summary == "Direction HUB"}.id,
@@ -41,24 +39,25 @@ class HubBookingController < ApplicationController
                                         time_min: (Time.now - 0.days).at_beginning_of_day.iso8601
                                        ).items
     rescue Google::Apis::AuthorizationError => exception
-      response = client.refresh!
+      response = @client.refresh!
       session[:authorization] = session[:authorization].merge(response)
       retry
     end
 
-    # event_list.each do |e|
-    #   puts e.summary
-    #   puts e.color_id
-    #   puts e.start.date_time.beginning_of_hour
-    #   puts DateTime.now.beginning_of_hour
-    # end
     @events = event_list.select{|item| item.color_id != '9'}
     @bookings = event_list.select{|event| event.color_id == '9' and event.start.date_time.beginning_of_day == (DateTime.now + 0.days).beginning_of_day}
     I18n.default_locale = :fr
     ajd = I18n.l Time.now
     ajd = ajd.split
-    @date_str = days[Time.now.strftime('%A')] + " " + ajd.first.remove('0') + " " + ajd.second.titleize
     @histories = LockerHistory.all.last(6)
+    @histories.each do |hist|
+      puts LockerUser.select(:F_Name, :L_Name, :NFC_tag).where(id: hist.user_id).try(:F_Name)
+    end
+    @presents = User.where(is_present: true)
+  end
+
+  def update_presents
+    @presents = User.where(is_present: true)
   end
 
   def events
@@ -67,14 +66,14 @@ class HubBookingController < ApplicationController
 
   private
   def create_google_client
-    client = Signet::OAuth2::Client.new(
+    @client = Signet::OAuth2::Client.new(
       {
         client_id: Rails.application.secrets.google_client_id,
         client_secret: Rails.application.secrets.google_client_secret,
         token_credential_uri: 'https://accounts.google.com/o/oauth2/token'
       })
-    client.update!(session[:authorization])
+    @client.update!(session[:authorization])
     @service = Google::Apis::CalendarV3::CalendarService.new
-    @service.authorization = client
+    @service.authorization = @client
   end
 end

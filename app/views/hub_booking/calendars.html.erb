@@ -268,39 +268,8 @@
       </div>
     </div>
   </div>
-  <div class="col-md-12">
-    <div class="box jumbotron text-center" id="whoishere">
-      <h3><b>QUI EST DANS LE HUB</b></h3>
-      <hr>
-      <div class="text-center">
-        <%= image_tag "thibaut.png", width: "75px" %>
-	<h4>Thibaut</h4>
-      </div>
-      <div class="text-center">
-        <%= image_tag "riadh.png", width: "75px" %>
-	<h4>Riadh</h4>
-      </div>
-      <div class="text-center">
-        <%= image_tag "noam.png", width: "75px" %>
-	<h4>Noam</h4>
-      </div>
-      <div class="text-center">
-        <%= image_tag "lucas.png", width: "75px" %>
-	<h4>lucas</h4>
-      </div>
-      <div class="text-center">
-        <%= image_tag "jeremy.png", width: "75px" %>
-	<h4>Jeremy</h4>
-      </div>
-      <div class="text-center">
-        <%= image_tag "clara.png", width: "75px" %>
-	<h4>Clara</h4>
-      </div>
-      <div class="text-center">
-        <%= image_tag "iulian.png", width: "75px" %>
-	<h4>Iulian</h4>
-      </div>
-    </div>
+  <div class="col-md-12" id="user_presents">
+    <%= render partial: "user_presents", presents: @presents %>
   </div>
   <div class="col-md-12">
     <div class="box jumbotron text-center" id="news">

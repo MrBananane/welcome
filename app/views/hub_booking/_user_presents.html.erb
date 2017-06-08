@@ -1,0 +1,24 @@
+<div class="box jumbotron text-center" id="whoishere">
+  <h3><b>QUI EST DANS LE HUB</b></h3>
+  <hr>
+  <% @presents.each do |user| %>
+  <div class="text-center">
+    <%= image_tag user.image_url, width: "75px" %>
+    <h4><%= user.first_name %></h4>
+  </div>
+  <% end %>
+</div>
+
+<script>
+  $(function() {
+    $(document).ready(function() {
+      setInterval(function() {
+        jQuery.ajax({
+          url: <%= update_presents_path %>,
+          type: "GET",
+          dataType: "script"
+        });
+      }, 1000); // In every 30 seconds
+    });
+  });
+</script>
