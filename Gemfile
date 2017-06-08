@@ -40,7 +40,7 @@ gem 'google-api-client', require: 'google/apis/calendar_v3'
 # I18n
 gem 'rails-i18n'
 # JQuery
-gem 'jquery'
+gem 'jquery-rails'
 # mysql2
 gem 'mysql2'
 
