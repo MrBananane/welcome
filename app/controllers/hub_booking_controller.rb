@@ -50,9 +50,6 @@ class HubBookingController < ApplicationController
     ajd = I18n.l Time.now
     ajd = ajd.split
     @histories = LockerHistory.all.last(6)
-    @histories.each do |hist|
-      puts LockerUser.select(:F_Name, :L_Name, :NFC_tag).where(id: hist.user_id).try(:F_Name)
-    end
     @presents = User.where(is_present: true)
   end
 

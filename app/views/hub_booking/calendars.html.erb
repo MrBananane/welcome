@@ -35,30 +35,12 @@
 	    <div class="box jumbotron first text-center" id="today">
 	      <h3><b>AUJOURD'HUI</b></h3>
 	      <table style="width:100%; text-align:left; margin:20px;">
+		<% (0..6).each do |i| %>
 	        <tr>
-	          <td><h4>Réunion</h4></td>
-	          <td><h4 class="text-center table-transp" ><b>18h</b></h4></td>
+	          <td><h4><%= @events[i].summary %></h4></td>
+	          <td><h4 class="text-center table-transp" ><b><%= @events[i].start.date_time.hour.to_s + "h-" + @events[i].end.date_time.hour.to_s + "h" %></b></h4></td>
 	        </tr>
-
-	        <tr>
-	          <td><h4>Interview & Présentations Projet</h4></td>
-	          <td><h4 class="text-center table-transp"><b>14h<b></h4></td>
-	        </tr>
-
-	        <tr>
-	          <td><h4>&nbsp;</h4></td>
-	          <td><h4 class="text-center table-transp"><b>&nbsp;<b></h4></td>
-	        </tr>
-
-	        <tr>
-	          <td><h4>&nbsp;</h4></td>
-	          <td><h4 class="text-center table-transp"><b>&nbsp;</b></h4></td>
-	        </tr>
-
-	        <tr>
-	          <td><h4>&nbsp;</h4></td>
-	          <td><h4 class="text-center table-transp"><b>&nbsp;</b></h4></td>
-	        </tr>
+		<% end %>
 	      </table>
 	    </div>
 	  </div>
@@ -94,38 +76,13 @@
   <div class="box jumbotron text-center" id="inventaire">
     <h3><b>HISTORIQUE DES RETRAITS</b></h3>
     <table style="width:100%; text-align:left; margin:20px;">
+      <% @histories.each do |hist| %>
       <tr>
-	<td><h4>HTC VIVE</h4></td>
-	<td><h4>Christian</h4></td>
-	<td><h4>15h</h4></td>
-
+	<td><h4><%= LockerObj.find(hist.objs_id).name %></h4></td>
+	<td><h4><%= LockerUser.select(:F_Name, :L_Name, :NFC_tag).where(id: hist.user_id).try(:F_Name) %></h4></td>
+	<td><h4><%= hist.date.to_s %></h4></td>
       </tr>
-      <tr>
-	<td><h4>Raspberry PI 3</h4></td>
-	<td><h4>Felix</h4></td>
-	<td><h4>15h</h4></td>
-      </tr>
-      <tr>
-      <tr>
-	<td><h4>Fer à souder</h4></td>
-	<td><h4>Felix</h4></td>
-	<td><h4>3h</h4></td>        </tr>
-      <tr>
-	<td><h4> &nbsp;</h4></td>
-	<td><h4> </h4></td>
-	<td><h4> </h4></td>
-      </tr>
-
-      <tr>
-	<td><h4>&nbsp;</h4></td>
-	<td><h4> </h4></td>
-	<td><h4> </h4></td>
-      </tr>
-      <tr>
-	<td><h4> &nbsp;</h4></td>
-	<td><h4> </h4></td>
-	<td><h4> </h4></td>
-      </tr>
+      <% end %>
     </table>
   </div>
 </div>
