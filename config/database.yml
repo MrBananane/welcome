@@ -23,3 +23,10 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+locker:
+  adapter: mysql2
+  database: db/development
+  username: welcome
+  password: lRgf7bMp
+  host: 52.213.247.63

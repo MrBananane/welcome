@@ -41,6 +41,8 @@ gem 'google-api-client', require: 'google/apis/calendar_v3'
 gem 'rails-i18n'
 # JQuery
 gem 'jquery'
+# mysql2
+gem 'mysql2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

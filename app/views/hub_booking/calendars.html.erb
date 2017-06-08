@@ -2,378 +2,367 @@
 <head>
   <meta charset="UTF-8">
   <title>Hub - EPITECH</title>
-
   <!-- Import CSS-->
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <% if false %>
+    <link rel="stylesheet" href="style.css">
+  <% end %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+  <%= stylesheet_link_tag "weather-icons" %>
+  <%= stylesheet_link_tag "weather-icons-api" %>
+  <%= stylesheet_link_tag "weather-icons-wind" %>
   <!-- Import JS-->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-
 <body>
+  <div>
+    <div class="col-md-4">
 
-  <div id ="perso-screen" class="col-md-4">
-    <div class="col-md-12">
-      <div class="box jumbotron" id="who">
-        <div class="photo">
-          <%= image_tag 'felix.png'%>
-        </div>
-        <div class="info">
-          <h3><b>John Doe</b></h3>
-          <h4>Astek - 3ème année</h4>
-        </div>
+      <div class="tab-content">
+	<div role="tabpanel" class="" id="global-screen">
+	  <div class="col-md-12">
+	    <div class="box jumbotron text-center" id="home">
+	      <div class="photo">
+	      </div>
+	      <div class="info">
+
+	        <h2><b>Bienvenue au Hub Epitech !</B></h2>
+
+	      </div>
+	    </div>
+	  </div>
+
+	  <div class="col-md-12">
+	    <div class="box jumbotron first text-center" id="today">
+	      <h3><b>AUJOURD'HUI</b></h3>
+	      <table style="width:100%; text-align:left; margin:20px;">
+	        <tr>
+	          <td><h4>Réunion</h4></td>
+	          <td><h4 class="text-center table-transp" ><b>18h</b></h4></td>
+	        </tr>
+
+	        <tr>
+	          <td><h4>Interview & Présentations Projet</h4></td>
+	          <td><h4 class="text-center table-transp"><b>14h<b></h4></td>
+	        </tr>
+
+	        <tr>
+	          <td><h4>&nbsp;</h4></td>
+	          <td><h4 class="text-center table-transp"><b>&nbsp;<b></h4></td>
+	        </tr>
+
+	        <tr>
+	          <td><h4>&nbsp;</h4></td>
+	          <td><h4 class="text-center table-transp"><b>&nbsp;</b></h4></td>
+	        </tr>
+
+	        <tr>
+	          <td><h4>&nbsp;</h4></td>
+	          <td><h4 class="text-center table-transp"><b>&nbsp;</b></h4></td>
+	        </tr>
+	      </table>
+	    </div>
+	  </div>
+
+	  <div class="col-md-12">
+	    <div class="box jumbotron text-center" id="message">
+	      <h3><b>CHANNEL SLACK - GENERAL</b></h3>
+	      <table style="width:100%; text-align:left; margin:20px;">
+	        <tr>
+	          <td><h4>from <b>@schwarzy</b></h4><h5><b>@everyone</b> qq a t'il pris une rasp qui trainait dans la bibliothèque ?</h5></td>
+	          <td><h4 class="text-center">5min</h4></td>
+	        </tr>
+
+	        <tr>
+	          <td><h4>from <b>@pm_blackfoot</b></h4><h5><b>@everyone</b> tournage et itw pour marie claire</h5></td>
+	          <td><h4 class="text-center">1h</h4></td>
+	        </tr>
+
+	        <tr>
+	          <td><h4>from <b>@pm_blackfoot</b></h4><h5><b>@everyone</b> il me faut absolument hexapod et horyus cette aprem</h5></td>
+	          <td><h4 class="text-center">1h</h4></td>
+	        </tr>
+
+	        <tr>
+	          <td><h4>&nbsp;</h5></td>
+<td><h4 class="text-center">&nbsp;</h4></td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="col-md-12">
+  <div class="box jumbotron text-center" id="inventaire">
+    <h3><b>HISTORIQUE DES RETRAITS</b></h3>
+    <table style="width:100%; text-align:left; margin:20px;">
+      <tr>
+	<td><h4>HTC VIVE</h4></td>
+	<td><h4>Christian</h4></td>
+	<td><h4>15h</h4></td>
+
+      </tr>
+      <tr>
+	<td><h4>Raspberry PI 3</h4></td>
+	<td><h4>Felix</h4></td>
+	<td><h4>15h</h4></td>
+      </tr>
+      <tr>
+      <tr>
+	<td><h4>Fer à souder</h4></td>
+	<td><h4>Felix</h4></td>
+	<td><h4>3h</h4></td>        </tr>
+      <tr>
+	<td><h4> &nbsp;</h4></td>
+	<td><h4> </h4></td>
+	<td><h4> </h4></td>
+      </tr>
+
+      <tr>
+	<td><h4>&nbsp;</h4></td>
+	<td><h4> </h4></td>
+	<td><h4> </h4></td>
+      </tr>
+      <tr>
+	<td><h4> &nbsp;</h4></td>
+	<td><h4> </h4></td>
+	<td><h4> </h4></td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+
+
+<div role="tabpanel" class="" id="perso-screen">
+  <div class="col-md-12">
+    <div class="box jumbotron" id="who">
+      <div class="photo">
+	<%= image_tag 'felix.png' %>
+      </div>
+      <div class="info">
+	<h3><b>Felix</b></h3>
+	<h4>Astek - 3ème année</h4>
       </div>
     </div>
+  </div>
+  <div class="col-md-12">
+    <div class="box jumbotron first text-center" id="today">
+      <h3><b>AUJOURD'HUI</b></h3>
+      <table style="width:100%; text-align:left;">
+	<tr>
+	  <td><h4>Faire l'inventaire du matos</h4></td>
+	  <td><h4 class="text-center table-transp" ><b>9h-10h</b></h4></td>
+	</tr>
+	<tr>
+	  <td><h4>Séminaire Android</h4></td>
+	  <td><h4 class="text-center table-transp"><b>11h-15h<b></h4></td>
+	</tr>
+	<tr>
+	  <td><h4>Sprint All Teams</h4></td>
+	  <td><h4 class="text-center table-transp"><b>16h<b></h4></td>
+	</tr>
+	<tr>
+	  <td><h4>Brainstorming Résidents</h4></td>
+	  <td><h4 class="text-center table-transp"><b>18h</b></h4></td>
+	</tr>
+	<tr>
+	  <td><h4>Réunion</h4></td>
+	  <td><h4 class="text-center table-transp"><b>20h</b></h4></td>
+	</tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="box jumbotron text-center" id="message">
+      <h3><b>MES MESSAGES</b></h3>
+      <table style="width:100%; text-align:left; ">
+	<tr>
+	  <td><h4>from <b>@schwarzy</b></h4><h5><b>@everyone</b> qq a t'il pris une rasp qui trainait dans la bibliothèque ?</h5></td>
+	  <td><h4 class="text-center">5min</h4></td>
+	</tr>
 
-    <div class="col-md-12">
-      <div class="box jumbotron first text-center" id="today">
-        <h3><b>AUJOURD'HUI</b></h3>
-        <table style="width:100%; text-align:left; margin:20px;">
-	  <% if false %>
-          <tr>
-            <td><h4>Faire l'inventaire du matos</h4></td>
-            <td><h4 class="text-center table-transp" ><b>9h-10h</b></h4></td>
-          </tr>
+	<tr>
+	  <td><h4>from <b>@pm_blackfoot</b></h4><h5><b>@everyone</b> tournage et itw pour marie claire</h5></td>
+	  <td><h4 class="text-center">1h</h4></td>
+	</tr>
 
-          <tr>
-            <td><h4>Séminaire Android</h4></td>
-            <td><h4 class="text-center table-transp"><b>11h-15h<b></h4></td>
-            </tr>
+	<tr>
+	  <td><h4>from <b>@pm_blackfoot</b></h4><h5><b>@everyone</b> il me faut absolument hexapod et horyus cette aprem</h5></td>
+	  <td><h4 class="text-center">Hier</h4></td>
+	</tr>
 
-            <tr>
-              <td><h4>Sprint All Teams</h4></td>
-              <td><h4 class="text-center table-transp"><b>16h<b></h4></td>
-              </tr>
+	<tr>
+	  <td><h4>from <b>@nelly</b></h4><h5>Hello <b>@user!</b> Est-ce que t'aurais une Raspberry à me dépanner stp ?</h5></td>
+	  <td><h4 class="text-center">Hier</h4></td>
+	</tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="box jumbotron text-center" id="inventaire">
+      <h3><b>OBJETS EN MA POSSESSION</b></h3>
+      <table style="width:100%; text-align:left;">
+	<tr>
+	  <td><h4>Raspberry Pi 3</h4></td>
+	  <td><h4>Casier 15</h4></td>
+	  <td><h4>15h</h4></td>
 
-              <tr>
-                <td><h4>Brainstorming Résidents</h4></td>
-                <td><h4 class="text-center table-transp"><b>18h</b></h4></td>
-              </tr>
+	</tr>
+	<tr>
+	  <td><h4>Fer à souder</h4></td>
+	  <td><h4>Casier 16</h4></td>
+	  <td><h4>3h</h4></td>
+	</tr>
+	<tr>
+	  <td><h4>&nbsp; </h4></td>
+	  <td><h4> </h4></td>
+	  <td><h4> </h4></td>          </tr>
+	<tr>
+	  <td><h4> &nbsp;</h4></td>
+	  <td><h4> </h4></td>
+	  <td><h4> </h4></td>
+	</tr>
+	<tr>
+	  <td><h4>&nbsp;</h4></td>
+	  <td><h4> </h4></td>
+	  <td><h4> </h4></td>
+	</tr>
+	<tr>
+	  <td><h4>&nbsp;</h4></td>
+	  <td><h4> </h4></td>
+	  <td><h4> </h4></td>
+	</tr>
+	<tr>
+	  <td><h4> &nbsp;</h4></td>
+	  <td><h4> </h4></td>
+	  <td><h4> </h4></td>
+	</tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-5">
+  <div class="box text-center" id="map">
+    <%= image_tag 'map.png' %>
+    <canvas id="canvas" width="500" height="1000">
+      Sorry, your browser doesn't support the &lt;canvas&gt; element.
+    </canvas>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="col-md-12">
+    <div class="col-md-6" style="padding-left:0px;">
+      <div class="box jumbotron text-center" id="time">
+	<i id="icon"></i>
+	<h3><b>18 <i class="wi wi-celsius"></i>, ensoleillé</b></h3>
+	<h4 id="city">Kremlin-Bicêtre</h4>
+      </div>
+    </div>
+    <div class="col-md-6" style="padding-right:0px;">
+      <div class="box jumbotron text-center" id="hour">
+	<h2 id="hour"><b>15:00</b></h2>
+	<h3 id="date">Jeudi 12 Mai</h3>
+	<h4 id="year">2017</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="box jumbotron text-center" id="whoishere">
+      <h3><b>QUI EST DANS LE HUB</b></h3>
+      <hr>
+      <div class="text-center">
+        <%= image_tag "thibaut.png", width: "75px" %>
+	<h4>Thibaut</h4>
+      </div>
+      <div class="text-center">
+        <%= image_tag "riadh.png", width: "75px" %>
+	<h4>Riadh</h4>
+      </div>
+      <div class="text-center">
+        <%= image_tag "noam.png", width: "75px" %>
+	<h4>Noam</h4>
+      </div>
+      <div class="text-center">
+        <%= image_tag "lucas.png", width: "75px" %>
+	<h4>lucas</h4>
+      </div>
+      <div class="text-center">
+        <%= image_tag "jeremy.png", width: "75px" %>
+	<h4>Jeremy</h4>
+      </div>
+      <div class="text-center">
+        <%= image_tag "clara.png", width: "75px" %>
+	<h4>Clara</h4>
+      </div>
+      <div class="text-center">
+        <%= image_tag "iulian.png", width: "75px" %>
+	<h4>Iulian</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="box jumbotron text-center" id="news">
+      <h3><b>News du Hub</b></h3>
+      <table style="  width:100%; text-align:left;">
+							</br>
+							<tr>
+							  <td><h4>Petit rappel : Le Coding All-Star, sera proposé par la Société Générale le mardi 30 mai au Meltdown.
+							      L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et JS.</h4></td>
+							</tr>
 
-              <tr>
-                <td><h4>Réunion</h4></td>
-                <td><h4 class="text-center table-transp"><b>20h</b></h4></td>
-              </tr>
-	      <% else %>
-	      <% for i in 0..5 %>
-          <tr>
-            <td><h4><%= @events[i] ? @events[i].summary : "Jam Session" %></h4></td>
-            <td><h4 class="text-center table-transp" ><b><%= @events[i] ? "#{@events[i].start.date_time.hour}h-#{@events[i].end.date_time.hour}h" : "21h-2h" %></b></h4></td>
-          </tr>
-	  <% end %>
-	  <% end %>
-            </table>
-          </div>
-        </div>
-
-        <div class="col-md-12">
-          <div class="box jumbotron text-center" id="message">
-            <h3><b>MES MESSAGES</b></h3>
-            <table style="width:100%; text-align:left; margin:20px;">
-              <tr>
-                <td><h4>from <b>@schwarzy</b></h4><h5><b>@everyone</b> qq a t'il pris une rasp qui trainait dans la bibliothèque ?</h5></td>
-                <td><h4 class="text-center">5min</h4></td>
-              </tr>
-
-              <tr>
-                <td><h4>from <b>@pm_blackfoot</b></h4><h5><b>@everyone</b> tournage et itw pour marie claire</h5></td>
-                <td><h4 class="text-center">1h</h4></td>
-              </tr>
-
-              <tr>
-                <td><h4>from <b>@pm_blackfoot</b></h4><h5><b>@everyone</b> il me faut absolument hexapod et horyus cette aprem</h5></td>
-                <td><h4 class="text-center">Hier</h4></td>
-              </tr>
-
-              <tr>
-                <td><h4>from <b>@nelly</b></h4><h5>Hello <b>@user!</b> Est-ce que t'aurais une Raspberry à me dépanner stp ?</h5></td>
-                <td><h4 class="text-center">Hier</h4></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-
-        <div class="col-md-12">
-          <div class="box jumbotron text-center" id="inventaire">
-            <h3><b>OBJETS EN MA POSSESSION</b></h3>
-            <table style="width:100%; text-align:left; margin:20px;">
-              <tr>
-                <td><h4>Raspberry Pi 3</h4></td>
-                <td><h4>Casier 15</h4></td>
-                <td><h4>15h</h4></td>
-
-              </tr>
-              <tr>
-                <td><h4>Fer à souder</h4></td>
-                <td><h4>Casier 16</h4></td>
-                <td><h4>3h</h4></td>
-              </tr>
-              <tr>
-                <td><h4>Objet 1</h4></td>
-                <td><h4>Casier 15</h4></td>
-                <td><h4>15h</h4></td>          </tr>
-                <tr>
-                  <td><h4>Objet 1</h4></td>
-                  <td><h4>Casier 15</h4></td>
-                  <td><h4>15h</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Objet 1</h4></td>
-                  <td><h4>Casier 15</h4></td>
-                  <td><h4>15h</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Objet 1</h4></td>
-                  <td><h4>Casier 15</h4></td>
-                  <td><h4>15h</h4></td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-
-        <div id ="global-screen" class="col-md-4">
-
-          <div class="col-md-12">
-            <div class="box-without jumbotron text-center block-center" id="idle">
-              <%= image_tag "idle.png", class: "idle"%>
-            </div>
-          </div>
-
-        </div>
-
-
-        <div class="col-md-5">
-
-          <div class="box jumbotron text-center" id="map">
-            <canvas id="canvas" width="500" height="1000">
-              Sorry, your browser doesn't support the &lt;canvas&gt; element.
-
-            </canvas>
-
-          </div>
-        </div>
-        <div class="col-md-3">
-
-          <div class="col-md-12">
-            <div class="col-md-6" style="padding-left:0px;">
-              <div class="box jumbotron text-center" id="time">
-                <%= image_tag "weather-sun.png" %>
-                <h3><b>18°, ensoleillé</b></h3>
-                <h4>Kremlin-Bicêtre</h4>
-              </div>
-            </div>
-
-            <div class="col-md-6" style="padding-right:0px;">
-              <div class="box jumbotron text-center" id="time">
-                <h2 class="time"><b>15:00</b></h2>
-                <h3><%= @date_str %></h3>
-                <h4>2017</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="box jumbotron text-center" id="whoishere">
-              <h3><b>QUI EST DANS LE HUB</b></h3>
-              <hr>
-              <div class="col-md-3 text-center">
-                <%= image_tag "thibaut.png", width: "75px" %>
-                <h4>Thibaut</h4>
-              </div>
-              <div class="col-md-3 text-center" style="margin-bottom:20px;">
-                <%= image_tag "riadh.png", width: "75px" %>
-                <h4>Riadh</h4>
-              </div>
-              <div class="col-md-3 text-center" style="margin-bottom:20px;">
-                <%= image_tag "noam.png", width: "75px" %>
-                <h4>Noam</h4>
-              </div>
-              <div class="col-md-3 text-center" style="margin-bottom:25px;">
-                <%= image_tag "lucas.png", width: "75px" %>
-                <h4>lucas</h4>
-              </div>
-              <div class="col-md-3 text-center" style="margin-bottom:25px;">
-                <%= image_tag "jeremy.png", width: "75px" %>
-                <h4>Jeremy</h4>
-              </div>
-              <div class="col-md-3 text-center" style="margin-bottom:25px;">
-                <%= image_tag "clara.png", width: "75px"%>
-                <h4>Clara</h4>
-              </div>
-              <div class="col-md-3 text-center" style="margin-bottom:25px;">
-                <%= image_tag "iuilian.png", width: "75px" %>
-                <h4>Iuilian</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="box jumbotron text-center" id="news">
-              <h3><b>News du Hub</b></h3>
-              <table style="  width:100%; text-align:left; margin:20px;">
-                <tr>
-                  <td><h4>Petit rappel : Le Coding All-Star, sera proposé par la Société Générale le mardi 30 mai au Meltdown.
-L’event qui dure 4h00 est gratuit et propose quelques challenges en Python et JS.</h4></td>
-                </tr>
-
-                <tr>
-                  <td><h4> Il va y avoir un Hackthon lors de la VivaTechnology !!! Qui est chaud !?</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Intel Buzz Workshop Paris 2017 le 8 Juillet 2017</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Intel Buzz Workshop Paris 2017 le 8 Juillet 2017</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
-                </tr>
-                <tr>
-                  <td><h4>Brainstorming mardi 30/05 à 18h00 dans la salle Cocréer !</h4></td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
+							<tr>
+							  <td><h4> Il va y avoir un Hackthon lors de la VivaTechnology !!! Qui est chaud !?</h4></td>
+							</tr>
+							<tr>
+							  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+							</tr>
+							<tr>
+							  <td><h4>Intel Buzz Workshop Paris 2017 le 8 Juillet 2017</h4></td>
+							</tr>
+							<tr>
+							  <td><h4>Intel Buzz Workshop Paris 2017 le 8 Juillet 2017</h4></td>
+							</tr>
+							<tr>
+							  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+							</tr>
+							<tr>
+							  <td><h4>Brainstorming mardi 30/05 à 18h00 dans la salle Cocréer !</h4></td>
+							</tr>
+							<tr>
+							  <td><h4>Un nouveau résident arrive parmi nous ! Bienvenue à <b>Robin Houssais</b> alias <b>@roharkyn</b>.</h4></td>
+							</tr>
+							<tr>
+							  <td><h4>Brainstorming mardi 30/05 à 18h00 dans la salle Cocréer !</h4></td>
+							</tr>
+      </table>
+    </div>
+  </div>
+</div>
 </body>
+<script>
+  function altPerso(){
+  $("#perso-screen").fadeToggle();
+  $("#global-screen").css( "display", "none");
+  console.log("coucou");
+  }
+  setInterval(altPerso, 10000);
 
-<% weather_script_path = asset_path 'jquery.simpleWeather.js' %>
-<% script_path = asset_path 'script.js' %>
-      <script type="text/javascript" src=<%= "#{weather_script_path}" %>></script>
-      <script type="text/javascript" src=<%= "#{script_path}" %>></script>
+  function altGlobal(){
+  $("#global-screen").fadeToggle();
+  $("#perso-screen").css( "display", "none");
+  console.log("coucou");
+  }
+  setInterval(altGlobal, 20000);
 
-      <script>      //SCRIPT HEURES RESERVATION
-      var c=document.getElementById("canvas");
-      var txt=c.getContext("2d");
-      var ctx=c.getContext("2d");
-      var midX = (canvas.width)/2;
-      var midY = (canvas.height)/2;
-	txt.fillStyle = 'rgba(255, 255, 255, 1)';
-//	ctx.font="15px Calibri";
-  //      ctx.fillText("Libérée à",416,405);
-    //    ctx.fillText("Réservée à",301,830);
+</script>
 
-      txt.font="25px Calibri";
-       txt.fillText("16H10",125,185);
-      txt.fillText("16H20",170,330);
-      txt.fillText("16H30",140,660);
-      txt.fillText("16H40",150,760);
-      txt.fillText("16H00",300,850);
-      txt.fillText("17H00",410,680);
-      txt.fillText("17H10",410,425);
-      </script>
-
-      <script>      //SCRIPT SALLES
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-      ctx.beginPath();
-
-
-      ctx.moveTo(0, 205);
-      ctx.lineTo(50, 250);
-      ctx.lineTo(275, 250);
-      ctx.lineTo(275, 160);
-      ctx.lineTo(165, 50);
-      ctx.fill();
-//      txt.fillText("17H10",410,425);
-
-      //Salle Combiner
-      ctx.beginPath();
-      ctx.moveTo(130, 250);
-      ctx.lineTo(280, 250);
-      ctx.lineTo(280, 380);
-      ctx.lineTo(130, 380);
-      ctx.fill();
-//      txt.fillText("16H10",125,185);
-
-      //Salle Converger
-      ctx.beginPath();
-      ctx.moveTo(500, 350);
-      ctx.lineTo(410, 350);
-      ctx.lineTo(385, 380);
-      ctx.lineTo(385, 460);
-      ctx.lineTo(420, 490);
-	ctx.lineTo(500, 490);
-	<% @bookings.each do |booking| %>
-	<% if booking.summary.downcase.include?("converger") and (booking.start.date_time.beginning_of_hour == DateTime.now.beginning_of_hour) %>
-	  ctx.fill();
-	<% end %>
-	<% end %>
-
-      //Salle Planifier
-      ctx.beginPath();
-      ctx.moveTo(500, 610);
-      ctx.lineTo(410, 610);
-      ctx.lineTo(385, 650);
-      ctx.lineTo(385, 710);
-      ctx.lineTo(420, 740);
-      ctx.lineTo(500, 740);
-      ctx.fill();
-//      txt.fillText("16H50",300,850);
-
-      //Salle Échanger
-      ctx.beginPath();
-      ctx.moveTo(125, 610);
-      ctx.lineTo(125, 705);
-      ctx.lineTo(200, 705);
-      ctx.lineTo(225, 670);
-      ctx.lineTo(225, 610);
-      ctx.fill();
-//      txt.fillText("16H20",170,330);
-
-      //Salle
-      ctx.beginPath();
-      ctx.moveTo(125, 705);
-      ctx.lineTo(125, 810);
-      ctx.lineTo(140, 830);
-      ctx.lineTo(190, 830);
-      ctx.lineTo(270, 760);
-      ctx.lineTo(270, 710);
-      ctx.lineTo(220, 670);
-      ctx.lineTo(200, 710);
-      ctx.fill();
-//      txt.fillText("16H30",140,660);
-
-      //Salle Cocréer
-      ctx.beginPath();
-      ctx.moveTo(140, 830);
-      ctx.lineTo(190, 830);
-      ctx.lineTo(270, 760);
-      ctx.lineTo(270, 705);
-      ctx.lineTo(380, 705);
-      ctx.lineTo(420, 740);
-      ctx.lineTo(500, 740);
-      ctx.lineTo(500, 740);
-      ctx.lineTo(500, 810);
-      ctx.lineTo(350, 960);
-      ctx.lineTo(260, 960);
-      ctx.lineTo(170, 870);
-      ctx.fill();
-//      txt.fillText("16H40",150,760);
-
-      </script>
-
-      <script>
-      var duration = 2000;
-      $( ".idle" ).css("animation", "foo " + duration + "ms ease infinite alternate");
-
-      $( "#global-screen" ).on( "click", function() {
-        $("#perso-screen").fadeToggle();
-        $("#global-screen").css( "display", "none");
-      });
-
-      $( "#perso-screen" ).on( "click", function() {
-        $("#global-screen").fadeToggle();
-        $("#perso-screen").css( "display", "none");
-      });
-      </script>
-
-      </html>
+<%= javascript_include_tag('jquery.simpleWeather') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+<%= javascript_include_tag('script') %>
+<%= javascript_include_tag('canvas') %>
+</html>
