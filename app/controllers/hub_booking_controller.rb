@@ -51,6 +51,7 @@ class HubBookingController < ApplicationController
     ajd = ajd.split
     @histories = LockerHistory.all.last(6)
     @presents = User.where(is_present: true)
+    @last_user = User.find(User::entered_user)
   end
 
   def update_presents

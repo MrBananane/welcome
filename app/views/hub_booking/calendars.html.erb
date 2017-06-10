@@ -92,6 +92,7 @@
 <div role="tabpanel" class="" id="perso-screen">
   <div class="col-md-12">
     <div class="box jumbotron" id="who">
+      <% if @last_user.nil? %>
       <div class="photo">
 	<%= image_tag 'felix.png' %>
       </div>
@@ -99,6 +100,15 @@
 	<h3><b>Felix</b></h3>
 	<h4>Astek - 3ème année</h4>
       </div>
+      <% else %>
+      <div class="photo">
+	<%= image_tag @last_user.image_url %>
+      </div>
+      <div class="info">
+	<h3><b><%= @last_user.first_name %></b></h3>
+	<h4>Astek - 3ème année</h4>
+      </div>
+      <% end %>
     </div>
   </div>
   <div class="col-md-12">
