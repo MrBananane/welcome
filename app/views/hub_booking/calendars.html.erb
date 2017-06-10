@@ -18,6 +18,7 @@
     <div class="col-md-4">
 
       <div class="tab-content">
+	<% if @last_user.nil? %>
 	<div role="tabpanel" class="" id="global-screen">
 	  <div class="col-md-12">
 	    <div class="box jumbotron text-center" id="home">
@@ -87,7 +88,7 @@
   </div>
 </div>
 </div>
-
+<% else %>
 
 <div role="tabpanel" class="" id="perso-screen">
   <div class="col-md-12">
@@ -207,6 +208,7 @@
     </div>
   </div>
 </div>
+<% end %>
 </div>
 </div>
 </div>
@@ -277,22 +279,24 @@
   </div>
 </div>
 </body>
+<% if false %>
 <script>
   function altPerso(){
   $("#perso-screen").fadeToggle();
   $("#global-screen").css( "display", "none");
   console.log("coucou");
   }
-  setInterval(altPerso, 10000);
+  setInterval(altPerso, 20000);
 
   function altGlobal(){
   $("#global-screen").fadeToggle();
   $("#perso-screen").css( "display", "none");
   console.log("coucou");
   }
-  setInterval(altGlobal, 20000);
+  setInterval(altGlobal, 10000);
 
 </script>
+<% end %>
 
 <%= javascript_include_tag('jquery.simpleWeather') %>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
