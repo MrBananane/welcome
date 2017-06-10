@@ -18,7 +18,6 @@
     <div class="col-md-4">
 
       <div class="tab-content">
-	<% if @last_user.nil? %>
 	<div role="tabpanel" class="" id="global-screen">
 	  <div class="col-md-12">
 	    <div class="box jumbotron text-center" id="home">
@@ -88,7 +87,6 @@
   </div>
 </div>
 </div>
-<% else %>
 
 <div role="tabpanel" class="" id="perso-screen">
   <div class="col-md-12">
@@ -208,7 +206,6 @@
     </div>
   </div>
 </div>
-<% end %>
 </div>
 </div>
 </div>
@@ -295,6 +292,22 @@
   }
   setInterval(altGlobal, 10000);
 
+</script>
+<% end %>
+
+<% if @last_user.nil? %>
+<script>
+  (function {
+  $("#global-screen").fadeToggle();
+  $("#perso-screen").css( "display", "none");
+  })();
+</script>
+<% else %>
+<script>
+  (function {
+  $("#perso-screen").fadeToggle();
+  $("#global-screen").css( "display", "none");
+  })();
 </script>
 <% end %>
 
